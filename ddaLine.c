@@ -90,7 +90,7 @@ int SDL_Start(float coords[]){
     drawLine(renderer, coords);
 
     // Present the renderer to display the pixel(s)
-    SDL_RenderPresent(renderer);
+    // SDL_RenderPresent(renderer);     //if called again it cleared the screen
 
     SDL_Getch();
 
