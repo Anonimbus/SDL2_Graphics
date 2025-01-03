@@ -52,7 +52,9 @@ tar -xvzf SDL2-devel-2.xx.xx-mingw.tar.gz -C sdl
 Clone this repo, create a new C/C++ source file (e.g., `main.cpp`) and add the "sdl_custom_header.h" file given in this repo on top of your code by :
 ```c/cpp
 #include "sdl_custom_header.h"
+#include <SDL2/SDL_render.h>
 #include <stdio.h>
+
 //I've created the drawFunc in the sdl_custom_header.h
 void drawFunc(SDL_Renderer *renderer, float points[]){
     ...

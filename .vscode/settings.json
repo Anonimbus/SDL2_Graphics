@@ -2,6 +2,7 @@
     "files.associations": {
         "sdl.h": "c",
         "stdio.h": "c",
-        "sdl_custom_header.h": "c"
+        "sdl_custom_header.h": "c",
+        "sdl_render.h": "c"
     }
 }

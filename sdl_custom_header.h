@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>   //equivalent to graphics.h
+#include <SDL2/SDL_render.h>
 
 // Wait for a key press or a quit event to close the window
 void SDL_Getch(){
@@ -54,12 +55,17 @@ int SDL_Start(float coords[]){
         return 1;
     }
 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Set the default draw color white
+    // Set the background color (black)
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer); // Clear the window with the background color
 
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Set the default draw color white
+    
     drawFunc(renderer, coords);
 
     // Present the renderer to display the pixel(s)
-    // SDL_RenderPresent(renderer);     //if called again it cleared the screen
+    // Uncomment only if you haven't used it in your source code
+    // SDL_RenderPresent(renderer); //don't call consequently
 
     SDL_Getch();
 
