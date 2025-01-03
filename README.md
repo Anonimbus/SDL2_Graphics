@@ -27,11 +27,11 @@ SDL2 replaces the need for platform-specific graphics libraries, providing an ab
 
 ---
 
-## Windows Setup [time : ]
+## Windows Setup [time : 2-8 mins]
 
 Reference this video: [SDL2 Setup Tutorial](https://youtu.be/H08t6gD1Y1E?si=pC5MXzJEne0Wvq5A) or Follow along these steps to set up SDL2 for your C++ project on **Windows**.
 
-### 1.  For downloading and setting up SDL2
+### 1.  For downloading SDL2
 Steps are as follows : 
 - You may download the required release from the official [SDL Github Repo](https://github.com/libsdl-org/SDL/releases) here we download the Development Library : SDL2-devel-2.xx.xx-mingw.tar.gz
 
@@ -78,7 +78,7 @@ or you can use the Makefile
 If it still doesnot work inside the C/C++ extension, you could change the include path from ${default} to  ${workspaceFolder}/**
 ---
 
-## Linux Setup
+## Linux Setup [time : 1 min]
 
 Follow these steps to set up SDL2 for your C++ project on **Linux**.
 
