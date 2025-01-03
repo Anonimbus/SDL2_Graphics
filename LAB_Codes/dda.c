@@ -1,6 +1,6 @@
 // To run the code from terminal, type : gcc -o app main.c -lSDL2
 
-#include "sdl_custom_header.h"
+#include "../sdl_custom_header.h"
 #include <stdio.h>
 
 void drawFunc(SDL_Renderer *renderer, float points[]){

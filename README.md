@@ -27,28 +27,27 @@ SDL2 replaces the need for platform-specific graphics libraries, providing an ab
 
 ---
 
-## Windows Setup
+## Windows Setup [time : ]
 
-Follow these steps to set up SDL2 for your C++ project on **Windows**.
+Reference this video: [SDL2 Setup Tutorial](https://youtu.be/H08t6gD1Y1E?si=pC5MXzJEne0Wvq5A) or Follow along these steps to set up SDL2 for your C++ project on **Windows**.
 
-### 1. Reference this video: [SDL2 Setup Tutorial](https://youtu.be/H08t6gD1Y1E?si=pC5MXzJEne0Wvq5A) for downloading and setting up SDL2 in windows
-- You may download the required release from the official [SDL Github Repo](https://github.com/libsdl-org/SDL/releases)
+### 1.  For downloading and setting up SDL2
+Steps are as follows : 
+- You may download the required release from the official [SDL Github Repo](https://github.com/libsdl-org/SDL/releases) here we download the Development Library : SDL2-devel-2.xx.xx-mingw.tar.gz
 
-### 2. Setup Your IDE (optional)
-#### For Visual Studio:
-- Open your project in Visual Studio.
-- Right-click on the project name and go to **Properties**.
-- Under **VC++ Directories**, add the following paths:
-  - **Include Directories**: Point to the `include` folder inside the extracted SDL2 folder.
-  - **Library Directories**: Point to the `lib` folder inside the extracted SDL2 folder.
+### 2. Extract the development library
+Open command prompt and cd to your download location and type in :
+    ```
+    mkdir sdl
+    tar -xvzf SDL2-devel-2.xx.xx-mingw.tar.gz -C sdl
+    ```
 
-#### For MinGW/GCC:
-- Open your terminal or IDE (e.g., Code::Blocks or Visual Studio Code).
-- Add the path to the `include` directory of SDL2 in your build system or IDE settings.
-- Link the SDL2 library by adding `-lSDL2` to your linker flags.
-- Ensure the `SDL2.dll` file is located in the same folder as your executable, or add it to your system path.
+### 3. Extract the development library
+- copy the i686-w64-mingw32/**include** and i686-w64-mingw32/**lib** folders to your code src  directory
+- copy the bin/**SDL2.dll** on same level as your src folder
 
-### 3. Write Your First SDL2 Program
+
+### 4. Write Your First SDL2 Program
 Clone this repo, create a new C/C++ source file (e.g., `main.cpp`) and add the "sdl_custom_header.h" file given in this repo on top of your code by :
     ```
     
@@ -66,7 +65,17 @@ Clone this repo, create a new C/C++ source file (e.g., `main.cpp`) and add the "
         return 0;
     }
     ```
-
+### 5. Compile your c/cpp code
+You can do :
+    ```
+    g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
+    ```
+or you can use the Makefile 
+    ```makefile
+    all:
+        g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
+    ```
+If it still doesnot work inside the C/C++ extension, you could change the include path from ${default} to  ${workspaceFolder}/**
 ---
 
 ## Linux Setup
