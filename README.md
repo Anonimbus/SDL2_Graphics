@@ -39,6 +39,7 @@ Steps are as follows :
 Open command prompt and cd to your download location and type in :
     ```
     mkdir sdl
+
     tar -xvzf SDL2-devel-2.xx.xx-mingw.tar.gz -C sdl
     ```
 
@@ -66,16 +67,20 @@ Clone this repo, create a new C/C++ source file (e.g., `main.cpp`) and add the "
     }
     ```
 ### 5. Compile your c/cpp code
-You can do :
+
+You can do 
+
     ```
     g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
     ```
 or you can use the Makefile 
+
     ```makefile
     all:
         g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
     ```
 If it still doesnot work inside the C/C++ extension, you could change the include path from ${default} to  ${workspaceFolder}/**
+
 ---
 
 ## Linux Setup [time : 1 min]
