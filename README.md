@@ -37,34 +37,33 @@ Steps are as follows :
 
 ### 2. Extract the development library
 Open command prompt and cd to your download location and type in :
-    ```
-    mkdir sdl
+```cmd
+mkdir sdl
 
-    tar -xvzf SDL2-devel-2.xx.xx-mingw.tar.gz -C sdl
-    ```
+tar -xvzf SDL2-devel-2.xx.xx-mingw.tar.gz -C sdl
+```
 
-### 3. Extract the development library
-- copy the i686-w64-mingw32/**include** and i686-w64-mingw32/**lib** folders to your code src  directory
-- copy the bin/**SDL2.dll** on same level as your src folder
+### 3. Copy the required files/folders to your graphics folder
+- copy the i686-w64-mingw32/**include** and i686-w64-mingw32/**lib** folders to your Graphics/src  directory
+- copy the bin/**SDL2.dll** on same level as your src folder i.e. at Graphics folder
 
 
 ### 4. Write Your First SDL2 Program
 Clone this repo, create a new C/C++ source file (e.g., `main.cpp`) and add the "sdl_custom_header.h" file given in this repo on top of your code by :
-    ```
-    
-    #include "sdl_custom_header.h"
-    #include <stdio.h>
-    //I've created the drawFunc in the sdl_custom_header.h
-    void drawFunc(SDL_Renderer *renderer, float points[]){
-        ...
-    }
-    int main(){
-        ...
+    ```c/cpp
+#include "sdl_custom_header.h"
+#include <stdio.h>
+//I've created the drawFunc in the sdl_custom_header.h
+void drawFunc(SDL_Renderer *renderer, float points[]){
+    ...
+}
+int main(){
+    ...
 
-        float points[4] = {x1,y1,x2,y2};
-        SDL_Start(points);
-        return 0;
-    }
+    float points[4] = {x1,y1,x2,y2};
+    SDL_Start(points);
+    return 0;
+}
     ```
 ### 5. Compile your c/cpp code
 
@@ -83,7 +82,7 @@ If it still doesnot work inside the C/C++ extension, you could change the includ
 
 ---
 
-## Linux Setup [time : 1 min]
+## Linux Setup [time : ~1 min]
 
 Follow these steps to set up SDL2 for your C++ project on **Linux**.
 
