@@ -1,40 +1,43 @@
-// To run the code from terminal, type : gcc -o app dda.c -lSDL2
 #include "../sdl_custom_header.h"
 #include <stdio.h>
+#include <math.h>
 
 void drawFunc(SDL_Renderer *renderer, float points[]){
+    int xa=points[0],ya=points[1],xb=points[2],yb=points[3];
 
-    float x1=points[0],y1=points[1],x2=points[2],y2=points[3];
-    int i,dx,dy,step;
-    float xn,yn;
+    int dx = abs(xa -xb), dy = abs(ya -yb);
+    int p = 2 * dy - dx;
+    int twoDy = 2*dy, twoDyDx = 2*(dy-dx);
+    int x, y, xEnd;
 
-    dx = x2-x1;
-    dy = y2-y1;
-    
-    if (abs(dx)>abs(dy)){
-        step = abs(dx);
+    if (xa > xb){
+        x = xb;
+        y = yb;
+        xEnd = xa;
     }
-    else {
-        step = abs(dy);
+    else{
+        x = xa;
+        y = ya;
+        xEnd = xb;
     }
-
-    xn = (float)dx/step;
-    yn = (float)dy/step;
-
+    SDL_RenderDrawPoint(renderer, x, y);
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);  // Set the color
 
-    for (i=1;i<=step;i++){
-        SDL_RenderDrawPoint(renderer, (int)x1, (int)y1);           // Draw the pixel
-        x1 = x1+xn;
-        y1 = y1+yn;
-
-        //animating the creation of the line
+    while (x < xEnd){
+        x++;
+        if (p < 0)
+            p += twoDy;
+        else{
+            y++;
+            p += twoDyDx;
+        }
+        SDL_RenderDrawPoint(renderer, x, y);
         SDL_Delay(10);  //adding delay of 10 ms for drawing each pixel
         SDL_RenderPresent(renderer);    //updates the window
     }
 }
 
-int main() {
+int main(){
     int x1,y1,x2,y2;
 
     printf("Enter the start coordinates (x1,y1) :\n");
@@ -44,8 +47,6 @@ int main() {
     scanf("%d %d",&x2,&y2);
 
     float points[4] = {x1,y1,x2,y2};
-
     SDL_Start(points);
-
     return 0;
 }
