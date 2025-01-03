@@ -51,9 +51,9 @@ Follow these steps to set up SDL2 for your C++ project on **Windows**.
 ### 3. Write Your First SDL2 Program
 Clone this repo, create a new C/C++ source file (e.g., `main.cpp`) and add the "sdl_custom_header.h" file given in this repo on top of your code by :
     ```
+    
     #include "sdl_custom_header.h"
     #include <stdio.h>
-
     //I've created the drawFunc in the sdl_custom_header.h
     void drawFunc(SDL_Renderer *renderer, float points[]){
         ...
