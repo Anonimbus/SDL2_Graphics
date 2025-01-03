@@ -50,7 +50,7 @@ tar -xvzf SDL2-devel-2.xx.xx-mingw.tar.gz -C sdl
 
 ### 4. Write Your First SDL2 Program
 Clone this repo, create a new C/C++ source file (e.g., `main.cpp`) and add the "sdl_custom_header.h" file given in this repo on top of your code by :
-    ```c/cpp
+```c/cpp
 #include "sdl_custom_header.h"
 #include <stdio.h>
 //I've created the drawFunc in the sdl_custom_header.h
@@ -64,21 +64,22 @@ int main(){
     SDL_Start(points);
     return 0;
 }
-    ```
+```
+
 ### 5. Compile your c/cpp code
 
 You can do 
 
-    ```
-    g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
-    ```
+```terminal
+g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
+```
 or you can use the Makefile 
 
-    ```makefile
-    all:
-        g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
-    ```
-If it still doesnot work inside the C/C++ extension, you could change the include path from ${default} to  ${workspaceFolder}/**
+```makefile
+all:
+    g++ -Isrc/Include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2
+```
+If it still doesn't work, go to the C/C++ extension, and you could change the include path from ${default} to  ${workspaceFolder}/**
 
 ---
 
@@ -89,18 +90,18 @@ Follow these steps to set up SDL2 for your C++ project on **Linux**.
 ### 1. Install SDL2
 Open the terminal and type in the following commands for your respective linux package manager.
 #### For Debian/Ubuntu-based distros:
-    ```bash
-    sudo apt-get update
-    sudo apt-get install libsdl2-dev
-    ```
+```bash
+sudo apt-get update
+sudo apt-get install libsdl2-dev
+```
 #### For Fedora:
-    ```bash
-    sudo dnf install SDL2-devel
-    ```
+```bash
+sudo dnf install SDL2-devel
+```
 #### For Arch Linux:
-    ```bash
-    sudo pacman -S sdl2
-    ```
+```bash
+sudo pacman -S sdl2
+```
 
 ### 2. Create your C/C++ source file or clone this repository
 Create a new C++ source file (e.g., main.cpp) and add the same test code as shown in the Windows Setup section
