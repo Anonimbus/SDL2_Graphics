@@ -25,9 +25,9 @@ void SDL_Close(SDL_Renderer *renderer, SDL_Window *window){
     SDL_Quit();
 }
 
-void drawFunc(SDL_Renderer *renderer, float points[]);
+void drawFunc(SDL_Renderer *renderer, int points[]);
 
-int SDL_Start(float coords[]){
+int SDL_Start(int coords[]){
     // Initialize SDL
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         SDL_Log("SDL_Init Error: %s", SDL_GetError());

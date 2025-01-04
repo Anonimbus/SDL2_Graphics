@@ -2,7 +2,7 @@
 #include "../sdl_custom_header.h"
 #include <stdio.h>
 
-void drawFunc(SDL_Renderer *renderer, float points[]){
+void drawFunc(SDL_Renderer *renderer, int points[]){
 
     float x1=points[0],y1=points[1],x2=points[2],y2=points[3];
     int i,dx,dy,step;
@@ -43,7 +43,7 @@ int main() {
     printf("\nEnter the end coordinates (x2,y2) :\n");
     scanf("%d %d",&x2,&y2);
 
-    float points[4] = {x1,y1,x2,y2};
+    int points[4] = {x1,y1,x2,y2};
 
     SDL_Start(points);
 
