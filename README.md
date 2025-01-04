@@ -12,8 +12,8 @@ This README will guide you through the process of setting up SDL2 on both **Wind
 ## Table of Contents
 
 - [What is SDL2?](#what-is-sdl2)
-- [Windows Setup](#windows-setup)
-- [Linux Setup](#linux-setup)
+- [Windows Setup](#windows-setup-time-2-8-mins)
+- [Linux Setup](#linux-setup-time-1-2-min)
 
 ---
 
@@ -27,7 +27,7 @@ SDL2 replaces the need for platform-specific graphics libraries, providing an ab
 
 ---
 
-## Windows Setup [time : 2-8 mins]
+## Windows Setup (time 2-8 mins)
 
 Reference this video: [SDL2 Setup Tutorial](https://youtu.be/H08t6gD1Y1E?si=pC5MXzJEne0Wvq5A) or Follow along these steps to set up SDL2 for your C++ project on **Windows**.
 
@@ -85,7 +85,7 @@ If it still doesn't work, go to the C/C++ extension, and you could change the in
 
 ---
 
-## Linux Setup [time : ~1 min]
+## Linux Setup (time 1-2 min)
 
 Follow these steps to set up SDL2 for your C++ project on **Linux**.
 
